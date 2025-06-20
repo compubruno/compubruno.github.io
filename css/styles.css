@@ -1,0 +1,506 @@
+/* Variables CSS */
+:root {
+    --color-primary: #007bff; /* Azul vibrante */
+    --color-secondary: #28a745; /* Verde para acciones */
+    --color-dark: #00478f; /* Negro casi */
+    --color-light: #f8f9fa; /* Gris muy claro */
+    --color-white: #ffffff;
+    --color-text: #495057; /* Gris oscuro para texto */
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1px 0;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Un azul más oscuro */
+    border-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #218838; /* Un verde más oscuro */
+    border-color: #218838;
+}
+
+/* Header */
+header {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-primary);
+}
+
+/* Secciones Generales */
+section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--color-light);
+}
+
+/* Hero Section */
+.hero-section {
+    /* Si quieres la imagen principal como fondo, usa esto. Asegúrate que 'foto principal.png' sea adecuada. */
+    background: var(--color-primary) url('../img/foto principal.png') no-repeat center center;
+    background-size: cover; /* Ajusta la imagen para cubrir todo el espacio */
+    background-position: center; /* Centra la imagen */
+    color: var(--color-white);
+    text-align: center;
+    padding: 150px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color oscuro semi-transparente */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--color-white); /* Títulos en blanco para la sección hero */
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--color-white);
+}
+
+/* Info Section (Clases Virtuales y Soporte Técnico) */
+.info-section .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.info-item {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 3em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.info-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--color-dark);
+}
+
+.info-item p {
+    font-size: 0.95em;
+    color: var(--color-text);
+}
+
+/* Pricing Section */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+}
+
+.pricing-card {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card.highlighted {
+    border: 3px solid var(--color-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.pricing-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+}
+
+.pricing-card .price {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.pricing-card .price .per-unit {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.pricing-card ul li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: var(--color-text);
+}
+
+.pricing-card .btn {
+    width: 100%;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--color-primary); /* Fondo azul sólido para la sección */
+    color: var(--color-white);
+    padding: 80px 0;
+    position: relative; /* Para posicionar las flechas */
+}
+
+.testimonials-section h2 {
+    color: var(--color-white); /* Títulos en blanco */
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scroll-snap-type: x mandatory; /* Asegura que se detenga en cada ítem */
+    -webkit-overflow-scrolling: touch; /* Para un desplazamiento suave en iOS */
+    padding-bottom: 20px; /* Espacio para la barra de desplazamiento si es visible */
+    scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en Chrome/Safari */
+}
+
+.testimonial-item {
+    flex: 0 0 350px; /* Define el ancho de cada testimonio y evita que se encoja */
+    scroll-snap-align: center; /* Alinea el ítem al centro al detener el scroll */
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    padding: 30px;
+    margin: 0 15px; /* Espacio entre testimonios */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Altura mínima para que todos se vean parecidos */
+}
+
+/* Estilos para las imágenes de los testimonios */
+.testimonial-image {
+    width: 100px;  /* Tamaño de la imagen */
+    height: 100px; /* Debe ser igual al ancho para un círculo perfecto */
+    border-radius: 50%; /* Esto hace que la imagen sea circular */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+    border: 3px solid var(--color-primary); /* Borde alrededor de la imagen */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Para que el párrafo ocupe el espacio disponible */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente si es corto */
+}
+
+.testimonial-item .author {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-style: normal;
+    margin-top: auto; /* Empuja el autor hacia la parte inferior */
+}
+
+/* Navegación del Carrusel */
+.carousel-navigation {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 5; /* Asegura que las flechas estén por encima de los testimonios */
+    pointer-events: none; /* Permite clics a través de este div a los botones */
+}
+
+.carousel-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    pointer-events: auto; /* Permite clics en los botones */
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    color: var(--color-primary);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Color de WhatsApp */
+    color: var(--color-white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px 10px; /* Espacio entre items y margen inferior */
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .info-section .info-grid,
+    .pricing-cards {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .pricing-card.highlighted {
+        transform: none; /* Elimina la transformación en móviles */
+    }
+
+    .testimonial-item {
+        flex: 0 0 90%; /* Los testimonios ocupan casi todo el ancho */
+        margin: 0 10px;
+    }
+
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 100px 0;
+        min-height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
